@@ -1,54 +1,54 @@
 import React, { useState } from 'react';
-import './Header.scss';
-import LoginForm from './LoginForm';
-import SignUpForm from './SignUpForm';
-
-// export function Header() {
-    const Header: React.FC = () => {
-        const [showSignUpForm, setShowSignUpForm] = useState<boolean>(false);
-        const [showLoginForm, setShowLoginForm] = useState<boolean>(false);
-
-        const showSignUp = () => {
-            setShowSignUpForm(true);
-            setShowLoginForm(false)
-        };
-
-        const showLogin = () => {
-            setShowLoginForm(true);
-            setShowSignUpForm(false)
-        };
+import "./Be-a-Tasker.scss";
+import { Link } from 'react-router-dom';
+import TaskerSignUpForm from './TaskerSignUpForm';
+import TaskerLoginForm from './TaskerLogin';
 
 
-    return (
-        <div className='headerContainer'>
-            
-            <div className='signUp_Login_box' style={{
-                marginTop: '-265px',
-                borderRadius: '20px',
-                backgroundColor: 'white',
-                height: 'auto',
-                width: '450px',
+
+
+const BeATasker: React.FC = () => {
+
+   const [showTaskerSignUpForm, setShowTaskerSignUpForm] = useState<boolean>(false);
+   const [showTaskerLoginForm, setShowTaskerLoginForm] = useState<boolean>(false);
+
+   const showTaskerSignUp = () => {
+      setShowTaskerSignUpForm(true);
+      setShowTaskerLoginForm(false)
+  };
+
+  const showTaskerLogin = () => {
+   setShowTaskerLoginForm(true);
+   setShowTaskerSignUpForm(false)
+  };
+
+  return (
+    <div className="be-a-tasker-container">
+      <div className="top-area">
+      <Link to="/" id="site-header">
+            taskrabbit
+            </Link>
+      </div>
+      <div className='taskerRegisterContainer'>
+         <div className='image'>
                 
-            }}>
-                <h1 style={{
-                    paddingTop: '15px',
-                    fontSize: '70px'
-                }}>taskrabbit</h1>
-
-                      {/* Sign-up form */}
-      {showSignUpForm && (
+         </div>
+         <div className="moneyEarningCalc">
+           <a id="topic">Earn money your way</a> 
+           <p id="paragraph">See how much you can make <br />
+            tasking on TaskRabbit</p>
+            {showTaskerSignUpForm && (
         <div>
-          <SignUpForm onClose={() => setShowSignUpForm(false)} />
+          <TaskerSignUpForm onClose={() => setShowTaskerSignUpForm(false)} />
         </div>
-      )}
-
-      {/* Login form */}
-      {showLoginForm && (
+      )} 
+            {showTaskerLoginForm && (
         <div>
-          <LoginForm onClose={() => setShowLoginForm(false)} />
+          <TaskerLoginForm onClose={() => setShowTaskerLoginForm(false)} />
         </div>
-      )}
-      {!showSignUpForm && !showLoginForm && ( 
+      )} 
+
+            {!showTaskerSignUpForm && !showTaskerLoginForm && ( 
         <div>
                 <button style={{
                     // marginTop: '10px',
@@ -58,7 +58,7 @@ import SignUpForm from './SignUpForm';
                     backgroundColor: 'green',
                     color: 'white'
                 }}
-                onClick={showSignUp}>
+                onClick={showTaskerSignUp}>
                     Sign up
                 </button>
                 <button style={{
@@ -70,7 +70,7 @@ import SignUpForm from './SignUpForm';
                     backgroundColor: 'white',
                     color: 'green'
                 }}
-                onClick={showLogin}>
+                onClick={showTaskerLogin}>
                     Log in
                 </button>
                 <p style={{
@@ -82,8 +82,10 @@ import SignUpForm from './SignUpForm';
                      and <a href="">Privacy Policy</a>.
                 </p>
             </div>
-            )}      
-            <button id="help">
+            )}   
+         </div>
+      </div>
+      <button id="help">
                  <p style={{
                     border: '2px solid white',
                     borderRadius: '50%',
@@ -97,10 +99,8 @@ import SignUpForm from './SignUpForm';
                     marginLeft: '30px',
                  }}>Help</p>
             </button>
-
-        </div>
-        </div>
-    )
+    </div>
+  )
 }
 
-export default Header;
+export default BeATasker

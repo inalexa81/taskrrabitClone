@@ -1,0 +1,31 @@
+.headerContainer {
+  background-image: url("https://www.thehandymanservices.ca/wp-content/uploads/2022/02/01.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 25rem;
+  text-align: center;
+  position: relative; /* Add this to create a positioning context */
+}
+
+#help {
+  position: fixed; /* Position the button relative to the viewport */
+  bottom: 10px; /* Adjust the bottom position as needed */
+  left: 10px; /* Adjust the left position as needed */
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: green;
+  z-index: 999; /* Ensure the button appears above other elements */
+}
+
+.field {
+  margin-top: 25px;
+  height: 40px;
+  width: 350px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+

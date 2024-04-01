@@ -1,0 +1,255 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-area {
+  height: 70px;
+  width: 100vw;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+}
+
+#site-header {
+  margin-top: 0;
+  text-align: center;
+  flex: 1;
+  color: black;
+  font-size: xxx-large;
+  font-weight: 600;
+}
+
+.TaskDetailsForm-Container {
+  padding: 30px;
+  background-color: rgb(238, 235, 231);
+}
+
+.task {
+  font-size: x-large;
+}
+
+.form {
+  border: 1px solid rgb(192, 188, 188);
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+.location {
+  margin: 0 20px 20px;
+  height: 3rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  font-size: large;
+}
+#header {
+  margin: 0 20px 0;
+  font-size: large;
+  font-weight: 500;
+}
+.select {
+  margin: 0 20px 20px;
+  height: 3.2rem;
+  border-radius: 0.5rem;
+  font-size: large;
+}
+.details {
+  margin: 0 20px 40px;
+  height: 3.2rem;
+  border-radius: 0.5rem;
+  font-size: large;
+}
+.button {
+  background-color: green;
+  color: white;
+  padding: 0.8rem;
+  height: 3rem;
+  border-radius: 3rem;
+  margin: 30px;
+  width: fit-content;
+  margin: auto;
+}
+
+.TaskerPickTaskerForm-Container {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchParams {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  border: 1px solid #ccc;
+  margin-left: 4rem;
+  margin-top: 2rem;
+  padding: 20px;
+  border-radius: 1.5rem;
+  .buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: center;
+    .searchButton {
+      margin-right: 10px;
+      padding: 5px 10px;
+      width: 9rem;
+      height: 3rem;
+      border-radius: 3rem;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+}
+.taskerForm {
+  flex: 3;
+  padding-right: 3rem;
+  .tasker-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tasker-item {
+    margin: 2rem 0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 1.5rem;
+
+    .tasker-info {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .tasker-left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .select-tasker-btn {
+        background-color: green;
+        color: white;
+        border: none;
+        margin-top: 3rem;
+        height: 3rem;
+        padding: 8px 16px;
+        border-radius: 3rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-weight: bold;
+
+        &:hover {
+          background-color: rgb(10, 83, 10);
+        }
+      }
+    }
+
+    .tasker-right {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      padding: 3rem;
+
+      .tasker-name-rate {
+        display: flex;
+        flex-direction: row;
+
+        .tasker-name {
+          font-weight: bold;
+          margin-bottom: 5px;
+          font-size: xx-large;
+        }
+
+        .tasker-rate {
+          font-weight: bold;
+          align-self: flex-end; // Aligns rate to the right
+          margin-left: auto; // Pushes the rate to the right
+          margin-bottom: 10px;
+          font-size: x-large;
+        }
+      }
+      .tasker-category {
+        margin-bottom: 10px;
+      }
+
+      .tasker-about {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+}
+
+/* Styles for the modal overlay */
+.modalOverlay {
+  border: 1px solid black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+  z-index: 1000; /* Ensure it appears above other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for the date and hour window */
+.dateHourWindow {
+  height: 30rem;
+  width: 40rem;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1001; /* Ensure it appears above the modal overlay */
+  position: relative;
+
+  .closeButton {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+  }
+  .dateWindowHeader{
+    text-align: center;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+}

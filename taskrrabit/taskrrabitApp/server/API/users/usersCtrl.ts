@@ -40,7 +40,37 @@ export async function register(req: express.Request, res: express.Response) {
     }
 }
 
-// decoding cookie example - backend
+export async function login(req: express.Request, res: express.Response) {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            throw new Error("Email and password are required.");
+        }
+
+        const user = await UserModel.findOne({ email });
+
+        if (!user) {
+            throw new Error("User not found.");
+        }
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+
+        if (!isPasswordValid) {
+            throw new Error("Invalid password.");
+        }
+
+        const token = jwt.encode({ userId: user._id }, process.env.JWT_SECRET || '');
+
+        res.cookie("token", token);
+        res.json({ success: true, user });
+        console.log( user )
+    } catch (error) {
+        res.status(400).json({ success: false, error: error.message });
+    }
+}
+
+
 
 export async function getUser(req: express.Request, res: express.Response) {
     try {

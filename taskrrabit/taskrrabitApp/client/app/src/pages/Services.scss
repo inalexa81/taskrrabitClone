@@ -1,0 +1,63 @@
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .top-area {
+    height: 70px;
+    width: 100vw;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #site-header{
+    margin-top: 0 ;
+    text-align: center;
+    flex: 1;
+    color: black;
+    font-size: xxx-large;
+    font-weight: 600;
+  }
+
+  .buttons{
+    
+    flex : 1
+  }
+
+  .button{
+    border: none;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    padding: 20px; 
+    font-size: inherit; 
+    font-family: inherit; 
+  }
+
+  #be-a-tasker{
+    border: 1px solid green;
+    border-radius: 5px;
+    color: green
+  }
+  #help {
+    position: fixed; /* Position the button relative to the viewport */
+    bottom: 10px; /* Adjust the bottom position as needed */
+    left: 10px; /* Adjust the left position as needed */
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: green;
+    z-index: 999; /* Ensure the button appears above other elements */
+  }
+  .image{
+    background-image: url("https://www.nextinsurance.com/wp-content/uploads/2022/01/jan-2022-14-802x454.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 10rem;
+    text-align: center;
+    color: white;
+    font-size:xxx-large;
+    font-weight: 700;
+  }
